@@ -8,7 +8,7 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
   insertData(data){
-    return this.http.post("https://electroapi.herokuapp.com//read",data)
+    return this.http.post("https://electroapi.herokuapp.com/read",data)
   }
   insertdata(data){
     return this.http.post("https://electroapi.herokuapp.com/read1",data)
