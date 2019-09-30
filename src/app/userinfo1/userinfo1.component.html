@@ -1,0 +1,62 @@
+<app-user-nav></app-user-nav>
+
+<div class="jumbotron">
+    <h1 class="display-4" style="text-align: center;color:green">Welcome to ElectroPlumps</h1>
+    <br>
+    <p class="lead" style="text-align: center">ElectroPlumps will help you to find your requirements</p>
+    <p style="text-align:center">This is the place where you can search for sanitary  engineers near to you</p>
+    <p class="lead">
+      <br>
+      <!-- <a class="btn btn-primary btn-lg" href="" role="button" style="margin-left: 590px">Let's search</a> -->
+      <button class="btn" style="margin-left: 590px"><i class="fa fa-download"></i> Enter Pincode</button>
+    </p>
+  </div>
+
+
+<form (ngSubmit)="onSubmit(u)" #u=ngForm style="margin-left: 550px">
+    <input type="text" name="name" ngModel>
+    <button type="submit" style="background-color: blue;height: 10;width: 10">search </button>
+</form>
+<br>
+<p *ngIf="!status else nodata">
+</p>
+
+ <!-- <ng-template #nodata>
+    <table class="table">
+        
+        <p  *ngFor="let data of mydata">   
+            <tr> <th>name</th> <th>phone</th> <th>rate</th> <th>image</th> </tr> 
+        <td>{{data.name1}}</td>
+        <td>{{data.phone1}}</td>
+        <td>{{data.rate1}}</td>
+        <td><img src="{{data.image1}}" alt="can't display" style="border-radius: 5%"></td>
+      </p>
+    </table>
+    
+</ng-template> -->
+<br>
+<ng-template #nodata>
+<div class="container">
+  <div class="row">
+      <b  *ngFor="let data of mydata">  
+    <div class="col-sm-3">
+        
+<div class="w3-card-4" style="width:120%">
+    
+  <header class="w3-container w3-light-grey" style="background-color: lightgray"style="width:600%">
+    <h3 style="color: Black">Name:{{data.name1}}</h3>
+  </header>
+  <div class="w3-container" style="width:700%">
+    <img src="{{data.image1}}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+    <h6>perDay: {{data.rate1}}</h6><br>
+    <h6>Number: {{data.phone1}}</h6><br>
+  </div>
+  <button class="w3-button w3-block w3-dark-grey" style="background-color: gray" style="width:600%">{{data.des1}}</button>
+
+</div>
+
+  </div>
+</b>
+</div>
+</div>
+</ng-template>

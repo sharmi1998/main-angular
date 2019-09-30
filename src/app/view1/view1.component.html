@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<table class="table">
+    <tr><th>name</th><th>address</th><th>description</th><th>phone</th><th>rate</th><th>pincode</th> <th>Image</th></tr>
+    <tr *ngFor="let data of myData">
+      <td>{{data.name1}} </td>
+      <td>{{data.add1}} </td>
+      <td>{{data.des1}}</td>
+      <td>{{data.phone1}}</td>
+      <td>{{data.rate1}}</td>
+      <td>{{data.pincode1}}</td>
+      <td> <img src="{{data.image1}}" alt="" style="height:100px;width: 200px;"></td>
+    </tr>
+  </table>
+  

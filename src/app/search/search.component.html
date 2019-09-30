@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 60px;">Search for elctrician</p>
+  <form (ngSubmit)="onSubmit(d)" #d=ngForm style="margin-left: 550px;margin-top: 20px;">
+      <input type="text" name="name" ngModel>
+      <button type="submit">search </button>
+  </form>
+  <p *ngIf="!status else nodata">
+    </p>
+  <ng-template #nodata>
+      <table class="table">
+          <b  *ngFor="let data of mydata">   
+          <tr><td>name</td><td><input type="text"[(ngModel)]='data.name'></td></tr>
+          <tr><td>phone</td><td><input type="text" [(ngModel)]='data.phone'></td></tr>
+          <tr><td>rate</td><td><input type="text"[(ngModel)]='data.rate'></td></tr>
+          <tr><td>pincode</td><td><input type="text"[(ngModel)]='data.pincode'></td></tr>
+          <!-- <tr><td></td><td><button type="submit" class="btn btn-info" (click)="editbutton()">Edit</button></td></tr> -->
+          <tr><td></td><td><a class="btn btn-info" (click)="editbutton()">Edit</a></td></tr>
+        <tr><td></td><td><button type="submit" class="btn btn-success" (click)="deletebutton()">Remove</button></td></tr>
+          </b>
+      </table>
+  </ng-template>
+  
